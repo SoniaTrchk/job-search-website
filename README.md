@@ -24,7 +24,6 @@ Database: MySQL
 
 ## Credits
 IA-94:
-<<<<<<< HEAD
 Hriaznova Yevheniia 
 Herenshtein Petro 
 Trochimchuk Sofia
