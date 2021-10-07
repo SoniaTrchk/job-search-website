@@ -15,7 +15,7 @@ There are two roles of using this website: **_employee_** and **_employer_**.
 | Create / edit / delete a summary. | Create / edit / delete a vacancy. |
 | Check and find vacancies using keywords. | Check and find employees by their resumes using keywords. |
 ***
-<<<<<<< HEAD
+
 ## Tech/Framework
 Back end: Node.Js
 Front end: HTML, CSS,JS
