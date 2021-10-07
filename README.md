@@ -16,8 +16,8 @@ There are two roles of using this website: **_employee_** and **_employer_**.
 ***
 ## Credits
 IA-94:
-Hriaznova Yevheniia 
-Herenshtein Petro 
-Trochimchuk Sofia
+[Hriaznova Yevheniia](https://github.com/Udjiniia), 
+[Herenshtein Petro](https://github.com/Pierre-4),
+[Trokhymtchuk Sofia](https://github.com/SoniaTrchk).
 
  
