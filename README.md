@@ -18,7 +18,9 @@ There are two roles of using this website: **_employee_** and **_employer_**.
 
 ## Tech/Framework
 Back end: Node.Js
+
 Front end: HTML, CSS,JS
+
 Database: MySQL
 ***
 
