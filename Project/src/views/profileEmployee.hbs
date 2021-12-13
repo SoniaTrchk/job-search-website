@@ -1,0 +1,21 @@
+<a href="/employee/add_resume">Create resume</a>
+            <td>{{client.name}}</td>
+            <td>{{client.surname}}</td>
+
+<table>
+    <tr><th></th><th></th><th></th></tr>
+    {{#each resumes}}
+        <tr>
+            <td>{{this.position}}</td>
+            <td>{{this.salary}}</td>
+            <td>{{this.cv}}</td>
+            <td>
+                <a href="edit_resume/{{this.resume_id}}">Edit</a>|
+                <form action="delete_resume/{{this.resume_id}}" method="POST" style="display:inline;">
+                    <input type="submit" value="Delete" />
+                </form>
+            </td>
+        </tr>
+    {{/each}}
+</table>
+<a href="/employee/logout">Logout</a>

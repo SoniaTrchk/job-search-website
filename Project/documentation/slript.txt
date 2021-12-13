@@ -1,0 +1,35 @@
+CREATE TABLE client (
+  client_id int NOT NULL AUTO_INCREMENT,
+  name varchar(50) NOT NULL,
+  surname varchar(50) NOT NULL,
+  login varchar(50) NOT NULL,
+  password varchar(50) NOT NULL,
+  gender varchar(2) NOT NULL,
+  role varchar(20) NOT NULL,
+  CONSTRAINT log_uniq UNIQUE (login),
+  PRIMARY KEY (client_id));
+
+CREATE TABLE resume (
+resume_id int NOT NULL AUTO_INCREMENT,
+position VARCHAR(100) NOT NULL,
+cv VARCHAR(4000) NOT NULL,
+salary int NOt NULL,
+employee_id int NOT NULL, 
+PRIMARY KEY (resume_id),
+CONSTRAINT cl_id_fk
+    FOREIGN KEY(client_id) 
+    REFERENCES client(client_id));
+
+CREATE TABLE contract (
+contract_id int NOT NULL AUTO_INCREMENT,
+position VARCHAR(100) NOT NULL,
+salary int NOt NULL,
+employer_id int NOT NULL, 
+employee_id int NOT NULL, 
+PRIMARY KEY (contract_id),
+CONSTRAINT employee_id_fk
+    FOREIGN KEY(employee_id) 
+    REFERENCES client(client_id),
+    CONSTRAINT employer_id_fk
+    FOREIGN KEY(employer_id) 
+    REFERENCES client(client_id));

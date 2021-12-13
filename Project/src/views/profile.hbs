@@ -1,0 +1,18 @@
+<table>
+    <tr><th></th><th></th><th></th></tr>
+    {{#each resumes}}
+        <tr>
+            <td>{{this.position}}</td>
+            <td>{{this.salary}}</td>
+            <td>{{this.cv}}</td>
+            <td>
+                <a href="employee/edit_resume/{{this.id}}">Edit</a>|
+                <form action="employee/delete_resume/{{this.id}}" method="POST" style="display:inline;">
+                    <input type="submit" value="Delete" />
+                </form>
+            </td>
+        </tr>
+    {{/each}}
+</table>
+<td>{{clients.name}}</td>
+<td>{{clients.surname}}</td>
