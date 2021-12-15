@@ -17,7 +17,7 @@ salary int NOt NULL,
 employee_id int NOT NULL, 
 PRIMARY KEY (resume_id),
 CONSTRAINT cl_id_fk
-    FOREIGN KEY(client_id) 
+    FOREIGN KEY(employee_id)
     REFERENCES client(client_id));
 
 CREATE TABLE contract (

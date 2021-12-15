@@ -20,6 +20,12 @@ module.exports = {
             callback
         )
     },
+    getResumeByPosition: function (con,position, callback){
+        con.query(
+            `SELECT * FROM resume WHERE position = ?`, [position],
+            callback
+        )
+    },
     updateResume: function (con,resume_id, id, data, callback) {
         con.query(
             `UPDATE resume SET position = ?, cv = ?, salary = ? WHERE employee_id = ? AND resume_id = ?`, [data.position,
