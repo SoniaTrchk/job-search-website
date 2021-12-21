@@ -3,6 +3,8 @@ const employerController = require("../сontrollers/employerController")
 const employerRouter = express.Router()
 
 employerRouter.get("", employerController.getEmployer);
+employerRouter.get("/resumes", employerController.resumesPage);
+employerRouter.get("/resumes", employerController.getAllResumes);
 employerRouter.get("/register", employerController.registrationEmployerPage);
 employerRouter.post("/register", employerController.registrationEmployer);
 employerRouter.get("/login", employerController.loginEmployerPage);

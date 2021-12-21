@@ -4,10 +4,16 @@ const Resume = require("Project/src/models/resume")
 
 
 module.exports = {
+    resumesPage: function (req, res) {
+        let id = req.signedCookies['idEmployer'];
+        if (id == null) {
+            res.redirect("/employer/login")
+        } else {
+            res.render("")
+        }
+    },
     getAllResumes: function (req,res){
-        Resume.listOfResumes(req.con, id, function (err, rows) {
-            res.render("ResumeList", {client: rows[0], resumes: rows})
-        })
+        Resume.listOfResumes(req.con)
     },
     getEmployer: function (req, res) {
         Employer.get(req.con, function (err, rows) {
