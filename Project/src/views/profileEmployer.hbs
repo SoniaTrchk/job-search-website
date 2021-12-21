@@ -1,0 +1,21 @@
+<a href="/employer/ResumeList">List of resumees</a>
+<td>{{client.name}}</td>
+<td>{{client.surname}}</td>
+
+<table>
+    <tr><th></th><th></th><th></th></tr>
+    {{#each contracts}}
+        <tr>
+            <td>{{this.position}}</td>
+            <td>{{this.salary}}</td>
+            <td>{{this.employee_id}}</td>
+            <td>
+                <a href="edit_contract/{{this.contract_id}}">Edit</a>|
+                <form action="delete_contract/{{this.contract_id}}" method="POST" style="display:inline;">
+                    <input type="submit" value="Delete" />
+                </form>
+            </td>
+        </tr>
+    {{/each}}
+</table>
+<a href="/employer/logout">Logout</a>

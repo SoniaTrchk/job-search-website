@@ -13,6 +13,7 @@ employerRouter.post("/add_contract", employerController.createContract);
 employerRouter.get("/edit_contract/:id", employerController.editContractPage);
 employerRouter.post("/edit_contract/:id", employerController.editContract);
 employerRouter.post("/delete_contract/:id", employerController.deleteContract);
+employerRouter.get("/all_resumes", employerController.getAllResumes)
 employerRouter.get("/logout", employerController.logout);
 
 

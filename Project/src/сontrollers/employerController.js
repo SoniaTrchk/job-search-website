@@ -1,8 +1,14 @@
 const Employer = require("../models/employer");
 const Contract = require("../models/contract");
+const Resume = require("Project/src/models/resume")
 
 
 module.exports = {
+    getAllResumes: function (req,res){
+        Resume.listOfResumes(req.con, id, function (err, rows) {
+            res.render("ResumeList", {client: rows[0], resumes: rows})
+        })
+    },
     getEmployer: function (req, res) {
         Employer.get(req.con, function (err, rows) {
             res.render("emp_profile", {clients: rows[0]})
@@ -29,21 +35,21 @@ module.exports = {
             }
         })
     },
-    // createContractPage: function (req, res) {
-    //     let id = req.signedCookies['idEmployer'];
-    //     if (id == null) {
-    //         res.redirect("/employer/login")
-    //     } else {
-    //         res.render("addContract")
-    //     }
-    // },
-    // // createContract: function (req, res) {
-    // //     let id = req.signedCookies['idEmployer'];
-    // //     const contract_id = req.params.id;
-    // //     Contract.createContract(req.con, id, req.body, function (err) {
-    // //         res.redirect("/employer/my_page")
-    // //     })
-    // // },
+    createContractPage: function (req, res) {
+         let id = req.signedCookies['idEmployer'];
+         if (id == null) {
+             res.redirect("/employer/login")
+         } else {
+             res.render("addContract")
+         }
+     },
+    createContract: function (req, res) {
+         let id = req.signedCookies['idEmployer'];
+         const resume = req.params.id;
+         Contract.createContract(req.con, id, resume, function (err) {
+            res.redirect("/employer/my_page")
+         })
+    },
     profileEmployer: function (req, res) {
         let id = req.signedCookies['idEmployer'];
         if (id == null) {

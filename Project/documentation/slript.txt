@@ -23,7 +23,7 @@ CONSTRAINT cl_id_fk
 CREATE TABLE contract (
 contract_id int NOT NULL AUTO_INCREMENT,
 position VARCHAR(100) NOT NULL,
-salary int NOt NULL,
+salary int NOT NULL,
 employer_id int NOT NULL, 
 employee_id int NOT NULL, 
 PRIMARY KEY (contract_id),

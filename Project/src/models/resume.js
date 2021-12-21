@@ -38,5 +38,10 @@ module.exports = {
             `DELETE FROM resume  WHERE  resume_id = ?`, [resume_id],
             callback
         )
+    },
+    listOfResumes : function(con,callback){
+        con.query(
+            `SELECT * FROM RESUME`, callback
+        )
     }
 }

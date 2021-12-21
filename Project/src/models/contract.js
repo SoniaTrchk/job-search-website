@@ -1,7 +1,7 @@
 
 
 module.exports = {
-    createContract: function (con,id, resume, callback) {
+    createContract: function (con, id, resume, callback) {
         con.query(
             `INSERT INTO contract SET position = ?, salary = ?, employee_id = ?, employer_id = ?`, [resume.position,
                 resume.salary, resume.employee_id, id],
