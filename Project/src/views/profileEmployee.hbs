@@ -1,12 +1,14 @@
 <a href="/employee/add_resume">Create resume</a>
             <td>{{client.name}}</td>
             <td>{{client.surname}}</td>
+            <td>{{client.gender}}</td>
+<a href="/employee/contracts">My contracts</a>
 
 <table>
     <tr><th></th><th></th><th></th></tr>
     {{#each resumes}}
         <tr>
-            <td>{{this.position}}</td>
+            <td>{{this.name}}</td>
             <td>{{this.salary}}</td>
             <td>{{this.cv}}</td>
             <td>

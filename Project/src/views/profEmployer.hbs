@@ -1,14 +1,16 @@
-<a href="/employer/ResumeList">List of resumees</a>
+<a href="/employer/resumes">List of resumes</a>
 <td>{{client.name}}</td>
 <td>{{client.surname}}</td>
+<td>{{client.gender}}</td>
 
 <table>
     <tr><th></th><th></th><th></th></tr>
     {{#each contracts}}
         <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.surname}}</td>
             <td>{{this.position}}</td>
             <td>{{this.salary}}</td>
-            <td>{{this.employee_id}}</td>
             <td>
                 <a href="edit_contract/{{this.contract_id}}">Edit</a>|
                 <form action="delete_contract/{{this.contract_id}}" method="POST" style="display:inline;">

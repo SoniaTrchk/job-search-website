@@ -1,4 +1,3 @@
-
 const express = require('express')
 cookieParser = require('cookie-parser')
 const con = require("./config/db")
@@ -8,17 +7,22 @@ const app = express()
 
 const employeeRouter = require("../src/routes/employeeRouter");
 const employerRouter = require("./routes/employerRouter");
+const authRouter = require("./routes/authRouter");
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     req.con = con
     next()
 })
 
 app.set('view engine', 'hbs');
 app.use(cookieParser('secret key'))
-app.use(express.urlencoded({ extended: false }))
-app.use("/employee",employeeRouter );
-app.use("/employer",employerRouter );
+app.use(express.urlencoded({extended: false}))
+app.use("/employee", employeeRouter);
+app.use("/employer", employerRouter);
+app.get("", function (req, res) {
+    res.redirect("/login")
+});
+app.use("", authRouter);
 
 app.listen(port, () => {
     console.log(`Search_job app listening at http://localhost:${port}`)

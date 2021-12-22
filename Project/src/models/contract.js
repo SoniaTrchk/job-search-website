@@ -8,9 +8,9 @@ module.exports = {
             callback
         )
     },
-    getAllContract: function (con,data, callback) {
+    getEmployerContract: function (con, id, callback) {
         con.query(
-            `SELECT * FROM contract con JOIN client cl on contr.employer_id = c.client_id WHERE employer_id = ?`, [data],
+            `SELECT * FROM contract con JOIN client cl on con.employee_id = cl.client_id WHERE employer_id = ?`, [id],
             callback
         )
     },
@@ -20,16 +20,22 @@ module.exports = {
             callback
         )
     },
-    updateContract: function (con, contract_id, id, data, callback) {
+    updateContract: function (con, contract_id, data, callback) {
         con.query(
-            `UPDATE contract SET position = ?, salary = ? WHERE employer_id = ? AND contract_id = ?`, [data.position,
-                data.salary, id, contract_id],
+            `UPDATE contract SET position = ?, salary = ? WHERE contract_id = ?`, [data.position,
+                data.salary, contract_id],
             callback
         )
     },
     deleteContract: function (con,contract_id, data, callback) {
         con.query(
             `DELETE FROM contract  WHERE  contract_id = ?`, [contract_id],
+            callback
+        )
+    },
+    getEmployeeContract : function (con, id, callback) {
+        con.query(
+            `SELECT * FROM contract con JOIN client cl on con.employer_id = cl.client_id WHERE employee_id = ?`, [id],
             callback
         )
     }

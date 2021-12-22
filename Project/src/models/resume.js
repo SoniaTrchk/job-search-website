@@ -14,9 +14,9 @@ module.exports = {
             callback
         )
     },
-    getResume: function (con,resume_id, id, callback){
+    getResume: function (con,resume_id, callback){
         con.query(
-            `SELECT * FROM resume WHERE resume_id = ? and employee_id = ?`, [resume_id, id],
+            `SELECT * FROM resume WHERE resume_id = ?`, [resume_id],
             callback
         )
     },
@@ -26,14 +26,14 @@ module.exports = {
             callback
         )
     },
-    updateResume: function (con,resume_id, id, data, callback) {
+    updateResume: function (con,resume_id, data, callback) {
         con.query(
-            `UPDATE resume SET position = ?, cv = ?, salary = ? WHERE employee_id = ? AND resume_id = ?`, [data.position,
-                data.cv, data.salary, id, resume_id],
+            `UPDATE resume SET position = ?, cv = ?, salary = ? WHERE resume_id = ?`, [data.position,
+                data.cv, data.salary, resume_id],
             callback
         )
     },
-    deleteResume: function (con,resume_id, data, callback) {
+    deleteResume: function (con,resume_id,callback) {
         con.query(
             `DELETE FROM resume  WHERE  resume_id = ?`, [resume_id],
             callback
@@ -41,7 +41,7 @@ module.exports = {
     },
     listOfResumes : function(con,callback){
         con.query(
-            `SELECT * FROM RESUME`, callback
+            `SELECT * FROM resume r JOIN client c on r.employee_id = c.client_id `, callback
         )
     }
 }

@@ -7,17 +7,25 @@
 </head>
 <body>
 <form method="POST">
-    <label>Имя</label><br>
+    <label>Role</label><br>
+    <select name="role">
+        <option>employee</option>
+        <option>employer</option>
+    </select><br><br>
+    <label>Name</label><br>
     <input name="name" class="field"/><br><br>
-    <label>Имя</label><br>
+    <label>Surname</label><br>
     <input name="surname" class="field"/><br><br>
-    <label>Имя</label><br>
+    <label>Login</label><br>
     <input name="login" class="field"/><br><br>
-    <label>Имя</label><br>
+    <label>Password</label><br>
     <input name="password" class="field"/><br><br>
-    <label>Имя</label><br>
-    <input name="gender" class="field"/><br><br>
-    <input type="submit" value="Отправить" />
+    <label>Gender</label><br>
+    <select name="gender">
+        <option>Female</option>
+        <option>Male</option>
+    </select><br><br>
+    <input type="submit" value="Sign up" />
 </form>
 </body>
 <html>
