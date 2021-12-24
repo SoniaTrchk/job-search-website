@@ -24,7 +24,7 @@
     "express": "^4.17.1",
     "hbs": "^4.2.0",
     "husky": "^7.0.4",
-    "lint-staged": "^11.2.3"
+    "lint-staged": "^11.2.6"
   },
   "husky": {
     "hooks": {
