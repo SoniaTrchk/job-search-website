@@ -19,7 +19,7 @@ There are two roles of using this website: **_employee_** and **_employer_**.
 ## Tech/Framework
 Back end: Node.Js,Express
 
-Front end: HTML,CSS, hbs
+Front end: HTML,CSS, hbs, Bootstrap
 
 Database: MySQL
 ***
