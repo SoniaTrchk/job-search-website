@@ -7,6 +7,7 @@ module.exports = {
       callback,
     );
   },
+
   checkClient(con, data, callback) {
     con.query(
       `SELECT * FROM client WHERE login = ? AND
