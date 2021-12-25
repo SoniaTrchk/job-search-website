@@ -2,10 +2,8 @@
 ## Description
 This website if for people who want to find a job and employers who are 
 looking for new workers. If you are looking for a vacancy you can create a 
-resume and use search filter to find some offers or potential employers 
-will find you, and if your company needs new workers you can easily find 
-some using search filters as well.
-Companies can use filters to find employees, or add a vacancy, that can be edited or deleted later.
+resume, and if your company needs new workers you can easily find 
+some.
 ***
 ## How to use
 There are two roles of using this website: **_employee_** and **_employer_**.
