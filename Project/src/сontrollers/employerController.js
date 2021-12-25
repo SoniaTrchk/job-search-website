@@ -31,15 +31,13 @@ module.exports = {
   },
   profileEmployer(req, res) {
     const id = req.signedCookies.idEmployer;
-    if (id == null){
+    if (id == null) {
       res.redirect("/employer/login");
     } else {
       Contract.getEmployerContract(req.con, id, (err, rows) => {
         Employer.getEmployer(req.con, id, (err, result) => {
           res.render("profEmployer", { client: result[0], contracts: rows });
         });
-
-
       });
     }
   },
@@ -60,6 +58,7 @@ module.exports = {
       res.redirect("/employer/my_page");
     });
   },
+
   deleteContract(req, res) {
     const contract_id = req.params.id;
     Contract.deleteContract(req.con, contract_id, req.body, (err) => {
