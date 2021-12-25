@@ -1,23 +1,87 @@
-<a href="/employer/resumes">List of resumes</a>
-<td>{{client.name}}</td>
-<td>{{client.surname}}</td>
-<td>{{client.gender}}</td>
+<!--<a href="/employer/resumes">List of resumes</a>-->
+<!--<td>{{client.name}}</td>-->
+<!--<td>{{client.surname}}</td>-->
+<!--<td>{{client.gender}}</td>-->
 
-<table>
-    <tr><th></th><th></th><th></th></tr>
-    {{#each contracts}}
-        <tr>
-            <td>{{this.name}}</td>
-            <td>{{this.surname}}</td>
-            <td>{{this.position}}</td>
-            <td>{{this.salary}}</td>
-            <td>
-                <a href="edit_contract/{{this.contract_id}}">Edit</a>|
-                <form action="delete_contract/{{this.contract_id}}" method="POST" style="display:inline;">
-                    <input type="submit" value="Delete" />
-                </form>
-            </td>
-        </tr>
-    {{/each}}
-</table>
-<a href="/employer/logout">Logout</a>
+<!--<table>-->
+<!--    <tr><th></th><th></th><th></th></tr>-->
+<!--    {{#each contracts}}-->
+<!--        <tr>-->
+<!--            <td>{{this.name}}</td>-->
+<!--            <td>{{this.surname}}</td>-->
+<!--            <td>{{this.position}}</td>-->
+<!--            <td>{{this.salary}}</td>-->
+<!--            <td>-->
+<!--                <a href="edit_contract/{{this.contract_id}}">Edit</a>|-->
+<!--                <form action="delete_contract/{{this.contract_id}}" method="POST" style="display:inline;">-->
+<!--                    <input type="submit" value="Delete" />-->
+<!--                </form>-->
+<!--            </td>-->
+<!--        </tr>-->
+<!--    {{/each}}-->
+<!--</table>-->
+<!--<a href="/employer/logout">Logout</a>-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<style>
+    table {
+        counter-reset: section;
+    }
+    .table{
+        margin-left: 20%;
+        width: 1000px;
+    }
+    .count:before {
+        counter-increment: section;
+        content: counter(section);
+    }
+    .container-profile{
+        display: flex;
+        margin-left: 2%;
+        margin-top: 2%;
+    }
+    span{
+        font-weight: bold;
+    }
+</style>
+<div class="container-profile">
+    <div class="options">
+        <h3> I am an <span>Employer</span>. <br> My personal data:</h3>
+        <td> Name: {{client.name}}</td><br>
+        <td>Surname: {{client.surname}}</td><br>
+        <td>Gender: {{client.gender}}</td><br>
+        <a href="/employer/resumes">List of resumes</a><br>
+        <a href="/employer/logout">Logout</a><br>
+    </div>
+
+    <div class="row justify-content-center">
+        <table class="table">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Surname</th>
+                <th scope="col">Position</th>
+                <th scope="col">Salary</th>
+                <th scope="col">Button</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each contracts}}
+                <tr>
+                    <td class="count"></td>
+                    <td>{{this.name}}</td>
+                    <td>{{this.surname}}</td>
+                    <td>{{this.position}}</td>
+                    <td>{{this.salary}}</td>
+                    <td>
+                        <a href="edit_contract/{{this.contract_id}}">Edit</a>|
+                        <form action="delete_contract/{{this.contract_id}}" method="POST" style="display:inline;">
+                            <input type="submit" value="Delete" />
+                        </form>
+                    </td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>

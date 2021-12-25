@@ -1,23 +1,66 @@
-<a href="/employee/add_resume">Create resume</a>
-            <td>{{client.name}}</td>
-            <td>{{client.surname}}</td>
-            <td>{{client.gender}}</td>
-<a href="/employee/contracts">My contracts</a>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<style>
+    table {
+        counter-reset: section;
+    }
+    .table{
+        margin-left: 20%;
+        width: 1000px;
+    }
+    .count:before {
+        counter-increment: section;
+        content: counter(section);
+    }
+    .container-profile{
+        display: flex;
+        margin-left: 2%;
+        margin-top: 2%;
+    }
+    span{
+        font-weight: bold;
+    }
+</style>
+<div class="container-profile">
+    <div class="options">
+        <h3> I am an <span>Employee</span>. <br> My personal data:</h3>
+        <td> Name: {{client.name}}</td><br>
+        <td>Surname: {{client.surname}}</td><br>
+        <td>Gender: {{client.gender}}</td><br>
+        <a href="/employee/add_resume">Create resume</a><br>
+        <a href="/employee/contracts">My contracts</a><br>
+        <a href="/employee/logout">Logout</a><br>
+    </div>
 
-<table>
-    <tr><th></th><th></th><th></th></tr>
-    {{#each resumes}}
-        <tr>
-            <td>{{this.name}}</td>
-            <td>{{this.salary}}</td>
-            <td>{{this.cv}}</td>
-            <td>
-                <a href="edit_resume/{{this.resume_id}}">Edit</a>|
-                <form action="delete_resume/{{this.resume_id}}" method="POST" style="display:inline;">
-                    <input type="submit" value="Delete" />
-                </form>
-            </td>
-        </tr>
-    {{/each}}
-</table>
-<a href="/employee/logout">Logout</a>
+    <div class="row justify-content-center">
+        <table class="table">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Position</th>
+                <th scope="col">Salary</th>
+                <th scope="col">CV</th>
+                <th scope="col">Button</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each resumes}}
+                <tr>
+                    <td class="count"></td>
+                    <td>{{this.position}}</td>
+                    <td>{{this.salary}}</td>
+                    <td>{{this.cv}}</td>
+                    <td>
+                        <a href="edit_resume/{{this.resume_id}}">Edit</a>|
+                        <form action="delete_resume/{{this.resume_id}}" method="POST" style="display:inline;">
+                            <input type="submit" value="Delete" />
+                        </form>
+                    </td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+

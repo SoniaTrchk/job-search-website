@@ -1,9 +1,54 @@
-<form method="POST">
-<label>Имя</label><br>
-<input name="position" value="{{resume.position}}" class="field"/><br><br>
-<label>Имя</label><br>
-<textarea name="cv" class="field">{{resume.cv}}</textarea><br><br>
-<label>Имя</label><br>
-<input name="salary" type="number" value="{{resume.salary}}" class="field"/><br><br>
-<input type="submit" value="Edit"/>
-</form>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+    body{
+        background-color: #525252;
+    }
+    .centered-form{
+        margin-top: 10%;
+    }
+
+    .centered-form .panel{
+        background: rgba(255, 255, 255, 0.8);
+        box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+    }
+</style>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<div class="container">
+    <div class="row centered-form">
+        <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+            <h1>Edit your resume</h1>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Please fill in all the fields
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <form role="form" method="post">
+
+                        <label>Position</label>
+                        <div class="form-group">
+                            <input type="text" name="position" value="{{resume.position}}" class="form-control input-sm" placeholder="{{resume.position}}">
+                        </div>
+                        <label>CV</label>
+                        <div class="form-group">
+                            <textarea name="cv" class="form-control input-sm" cols="30" rows="10">{{resume.cv}}</textarea>
+                        </div>
+                        <label>Salary</label>
+                        <div class="form-group">
+                            <input type="number" name="salary" value="{{resume.salary}}" class="form-control input-sm" placeholder="{{resume.salary}}">
+                        </div>
+
+                        <input type="submit" value="Edit" class="btn btn-info btn-block">
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

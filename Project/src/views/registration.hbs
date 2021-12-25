@@ -3,29 +3,79 @@
 <head>
     <title>Registration</title>
     <meta charset="utf-8" />
-    <style>.field{width:180px;}</style>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+        body{
+            background-color: #525252;
+        }
+        .centered-form{
+            margin-top: 10%;
+        }
+
+        .centered-form .panel{
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+        }
+        label{
+            color: #525252;
+        }
+    </style>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 <body>
-<form method="POST">
-    <label>Role</label><br>
-    <select name="role">
-        <option>employee</option>
-        <option>employer</option>
-    </select><br><br>
-    <label>Name</label><br>
-    <input name="name" class="field"/><br><br>
-    <label>Surname</label><br>
-    <input name="surname" class="field"/><br><br>
-    <label>Login</label><br>
-    <input name="login" class="field"/><br><br>
-    <label>Password</label><br>
-    <input name="password" class="field"/><br><br>
-    <label>Gender</label><br>
-    <select name="gender">
-        <option>Female</option>
-        <option>Male</option>
-    </select><br><br>
-    <input type="submit" value="Sign up" />
-</form>
+<div class="container">
+    <div class="row centered-form">
+        <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+            <h1>Welcome to our Job Search Website!</h1>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Please Sign Up!<br>
+                        Already have an account? <a style="color: #1700d4" href="/login">Sign in</a>
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <form role="form" method="post">
+
+                        <div class="form-group">
+                            <label>Select role:</label><br>
+                            <select name="role">
+                                <option>Employee</option>
+                                <option>Employer</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control input-sm" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="surname" class="form-control input-sm" placeholder="Surname">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="login" class="form-control input-sm" placeholder="Login">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" class="form-control input-sm" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <label>Select gender:</label><br>
+                            <select name="gender">
+                                <option>Female</option>
+                                <option>Male</option>
+                            </select>
+                        </div>
+
+                        <input type="submit" value="Sign up" class="btn btn-info btn-block">
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 <html>
