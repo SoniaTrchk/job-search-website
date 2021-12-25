@@ -6,5 +6,7 @@ module.exports = mysql.createConnection({
   user: 'root',
   database: 'job_search',
   password: '12345',
-  //password: 'root',
+  // password: 'root'
+
+
 });
