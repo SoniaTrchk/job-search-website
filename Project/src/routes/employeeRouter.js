@@ -12,6 +12,4 @@ employeeRouter.post("/delete_resume/:id", employeeController.deleteResume);
 employeeRouter.get("/logout", employeeController.logout);
 employeeRouter.get("/contracts", employeeController.contractsPage);
 
-
-
 module.exports = employeeRouter;

@@ -14,6 +14,7 @@ app.use((req, res, next) => {
   next();
 });
 
+
 app.set('view engine', 'hbs');
 app.use(cookieParser('secret key'));
 app.use(express.urlencoded({ extended: false }));
