@@ -42,5 +42,4 @@ module.exports = {
       `SELECT * FROM resume r JOIN client c on r.employee_id = c.client_id `, callback,
     );
   },
-
 };

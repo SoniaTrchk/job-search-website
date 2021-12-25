@@ -19,6 +19,7 @@ module.exports = {
   },
   getEmployer(con, data, callback) {
     con.query(
+
       `SELECT * FROM client WHERE client_id = ? AND role = 'employer'`, [data],
       callback,
     );
