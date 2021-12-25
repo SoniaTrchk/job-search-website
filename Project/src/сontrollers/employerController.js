@@ -31,7 +31,7 @@ module.exports = {
   },
   profileEmployer(req, res) {
     const id = req.signedCookies.idEmployer;
-    if (id == null) {
+    if (id == null)    {
       res.redirect("/employer/login");
     } else {
       Contract.getEmployerContract(req.con, id, (err, rows) => {
