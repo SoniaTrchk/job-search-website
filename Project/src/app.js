@@ -23,8 +23,7 @@ app.get("", (req, res) => {
   res.redirect("/login");
 });
 
-
 app.use("", authRouter);
 app.listen(port, () => {
-  console.log(`Search_job app listening at http://localhost:${port}`);
+  console.log(`Search_job app listening at http://localhost:${port}`)
 });
