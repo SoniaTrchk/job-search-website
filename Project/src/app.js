@@ -14,7 +14,6 @@ app.use((req, res, next) => {
   next();
 });
 
-
 app.set('view engine', 'hbs');
 app.use(cookieParser('secret key'));
 app.use(express.urlencoded({ extended: false }));
@@ -23,6 +22,8 @@ app.use("/employer", employerRouter);
 app.get("", (req, res) => {
   res.redirect("/login");
 });
+
+
 app.use("", authRouter);
 app.listen(port, () => {
   console.log(`Search_job app listening at http://localhost:${port}`);
