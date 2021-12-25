@@ -26,16 +26,20 @@
         <thead class="thead-light">
         <tr>
             <th scope="col">#</th>
+            <th scope="col">Employees name</th>
+            <th scope="col">Employees surname</th>
             <th scope="col">Position</th>
             <th scope="col">Salary</th>
             <th scope="col">CV</th>
-            <th scope="col">Button</th>
+            <th scope="col"></th>
         </tr>
         </thead>
         <tbody>
         {{#each resumes}}
             <tr>
                 <td class="count"></td>
+                <td>{{this.name}}</td>
+                <td>{{this.surname}}</td>
                 <td>{{this.position}}</td>
                 <td>{{this.salary}}</td>
                 <td>{{this.cv}}</td>

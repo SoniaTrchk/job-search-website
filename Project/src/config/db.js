@@ -5,6 +5,6 @@ module.exports = mysql.createConnection({
   port: 3306,
   user: 'root',
   database: 'job_search',
-  // password: '12345',
-  password: 'root',
+  password: '12345',
+  //password: 'root',
 });
